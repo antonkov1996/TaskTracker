@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.testwebflow.entities.Comments" table="Comments" schema="TaskTracker">
+        <id name="idComment" column="id_comment"/>
+        <property name="idAuthor" column="id_author"/>
+        <property name="text" column="text"/>
+        <property name="idProject" column="id_project"/>
+        <property name="idTask" column="id_task"/>
+    </class>
+</hibernate-mapping>

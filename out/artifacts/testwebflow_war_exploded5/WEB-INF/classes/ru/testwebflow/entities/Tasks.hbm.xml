@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.testwebflow.entities.Tasks" table="Tasks" schema="TaskTracker">
+        <id name="idTask" column="id_task"/>
+        <property name="taskStatus" column="task_status"/>
+        <property name="idDeveloper" column="id_developer"/>
+
+        <property name="idProject" column="id_project"/>
+    </class>
+</hibernate-mapping>

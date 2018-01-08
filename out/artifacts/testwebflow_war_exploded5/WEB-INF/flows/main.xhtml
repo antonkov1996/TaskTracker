@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<!--<f:view>
+    <h:outputLabel value="Change languages"/><br/>
+    <h:outputLink value="?lang=ru">
+        <p:button value="russian"/>
+    </h:outputLink>
+    <h:outputLink value="?lang=en">
+        <p:button value="english"/>
+    </h:outputLink>
+    <p:button value="${msg.yes}"/><br/><br/>
+    <a href="${request.contextPath}/app/logout">${msg.logout}</a>
+</f:view>-->
+<ui:composition template="/WEB-INF/templates/tasker.xhtml">
+    <ui:define name="content">
+        idTask: ${taskDAOimpl.getTask(1).idTask}<br/>
+        TaskStatus: ${taskDAOimpl.getTask(2).taskStatus}<br/>
+        idDeveloper: ${taskDAOimpl.getTask(1).idDeveloper}<br/>
+        idProject: ${taskDAOimpl.getTask(1).idProject}<br/><br/>
+
+
+        <h:dataTable value="#{taskDAOimpl.showTasks(1)}" var="t" border="1">
+            <h:column>
+                <f:facet name="header">idTask</f:facet>
+                #{t.idTask}
+            </h:column>
+            <h:column>
+                <f:facet name="header">TaskStatus</f:facet>
+                #{t.taskStatus}
+            </h:column>
+            <h:column>
+                <f:facet name="header">idDeveloper</f:facet>
+                #{t.idDeveloper}
+            </h:column>
+            <h:column>
+                <f:facet name="header">idProject</f:facet>
+                #{t.idProject}
+            </h:column>
+        </h:dataTable>
+        <br/><br/>
+        ${taskDAOimpl.showLogin().name}
+        <!--TODO реализовать выбор из таблицы-->
+        <!--TODO передовать id userа текущего сеанса-->
+        <!--TODO Показывать только его информацию-->
+
+
+
+    </ui:define>
+</ui:composition>
+</html>

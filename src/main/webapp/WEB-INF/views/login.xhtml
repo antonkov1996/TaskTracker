@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <h:outputLabel value="login page"/>
+    </h:head>
+    <h:body>
+        <form class="login_form" id="formLogin" action="#{request.contextPath}/app/checkuser" method="post">
+            <p:inputText id="username" value="#{user.username}" required="true" styleClass="aut-text"/>
+            <p:password id="password" value="#{user.password}" redisplay="true" required="true" styleClass="aut-text"/>
+            <c:if test="${not empty param.login_failed}">
+                <div class="error">
+                    Login failed
+                </div>
+            </c:if>
+
+            <p:panelGrid columns="3" columnClasses="col,col,col" >
+                <p:commandButton id="btnLogin" value="Login" type="submit" />
+            </p:panelGrid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+    </h:body>
+</f:view>
+</html>

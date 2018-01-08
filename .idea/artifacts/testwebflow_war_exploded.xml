@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="testwebflow:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/testwebflow_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="testwebflow/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="testwebflow" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
